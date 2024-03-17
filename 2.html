@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copiar CBU y Alias</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            background-color: #f6f6f6;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .button {
+            background-color: #ffe6e6;
+            color: #333;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 8px;
+            border: none;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #ffb3b3;
+        }
+        .instructions {
+            font-size: 18px;
+            color: #666;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Enlace para copiar CBU -->
+    <button class="button" onclick="copyCBU()">Copiar CBU</button>
+    <!-- Enlace para copiar Alias -->
+    <button class="button" onclick="copyAlias()">Copiar Alias</button>
+    <!-- Instrucciones -->
+    <p class="instructions">Transfiere tu regalo a nombre de la titular Florencia del Valle Carrizo.</p>
+</div>
+
+<script>
+    function copyCBU() {
+        var cbu = '4530000800010267062998';
+        navigator.clipboard.writeText(cbu)
+            .then(() => {
+                alert('CBU copiado: ' + cbu);
+            })
+            .catch(err => {
+                console.error('Error al copiar CBU: ', err);
+            });
+    }
+
+    function copyAlias() {
+        var alias = 'LAFURIA.COL';
+        navigator.clipboard.writeText(alias)
+            .then(() => {
+                alert('Alias copiado: ' + alias);
+            })
+            .catch(err => {
+                console.error('Error al copiar Alias: ', err);
+            });
+    }
+</script>
+
+</body>
+</html>
